@@ -1,2 +1,2 @@
-# Game-using-Data-Structure
-A 2D Graphical Game using Data Structure
+# Snakes-and-Ladders-using-Linked-List
+A 2D Graphical Snakes and Ladders Game using Linked List
