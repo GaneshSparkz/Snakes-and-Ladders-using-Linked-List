@@ -124,7 +124,6 @@ player1 = pygame.image.load("player1.png")
 player2 = pygame.image.load("player2.png")
 clock = pygame.time.Clock()
 while not done:
-    time.sleep(1)
     screen.blit(bg, (0, 0))
     screen.blit(board_sprite, (250, 0))
     screen.blit(dice_msg1, (10, 75))
@@ -139,42 +138,62 @@ while not done:
             if turn % 2 == 0:
                 if dice_value == 1:
                     six_rolled = False
-                    player1_turn = False
-                    player2_turn = True
                     if not player1_started:
                         player1_started = True
                         player1_square = board[1]
                     elif player1_square != board[100]:
                         player1_square = board[player1_square.position + 1]
+                        if player1_square.snake:
+                            player1_square = player1_square.snake
+                        if player1_square.ladder:
+                            player1_square = player1_square.ladder
                     turn += 1
+                    player1_turn = False
+                    player2_turn = True
                 elif dice_value == 2:
                     six_rolled = False
-                    player1_turn = False
-                    player2_turn = True
                     if player1_started and player1_square.position <= 98:
                         player1_square = board[player1_square.position + 2]
+                        if player1_square.snake:
+                            player1_square = player1_square.snake
+                        if player1_square.ladder:
+                            player1_square = player1_square.ladder
                     turn += 1
+                    player1_turn = False
+                    player2_turn = True
                 elif dice_value == 3:
                     six_rolled = False
-                    player1_turn = False
-                    player2_turn = True
                     if player1_started and player1_square.position <= 97:
                         player1_square = board[player1_square.position + 3]
+                        if player1_square.snake:
+                            player1_square = player1_square.snake
+                        if player1_square.ladder:
+                            player1_square = player1_square.ladder
                     turn += 1
+                    player1_turn = False
+                    player2_turn = True
                 elif dice_value == 4:
                     six_rolled = False
-                    player1_turn = False
-                    player2_turn = True
                     if player1_started and player1_square.position <= 96:
                         player1_square = board[player1_square.position + 4]
+                        if player1_square.snake:
+                            player1_square = player1_square.snake
+                        if player1_square.ladder:
+                            player1_square = player1_square.ladder
                     turn += 1
-                elif dice_value == 5:
-                    six_rolled = False
                     player1_turn = False
                     player2_turn = True
+                elif dice_value == 5:
+                    six_rolled = False
                     if player1_started and player1_square.position <= 95:
                         player1_square = board[player1_square.position + 5]
+                        if player1_square.snake:
+                            player1_square = player1_square.snake
+                        if player1_square.ladder:
+                            player1_square = player1_square.ladder
                     turn += 1
+                    player1_turn = False
+                    player2_turn = True
                 elif dice_value == 6:
                     six_rolled = True
                     if player1_started and player1_square.position <= 94:
@@ -184,82 +203,101 @@ while not done:
             else:
                 if dice_value == 1:
                     six_rolled = False
-                    player2_turn = False
-                    player1_turn = True
                     if not player2_started:
                         player2_started = True
                         player2_square = board[1]
                     elif player2_square != board[100]:
                         player2_square = board[player2_square.position + 1]
+                        if player2_square.snake:
+                            player2_square = player2_square.snake
+                        if player2_square.ladder:
+                            player2_square = player2_square.ladder
                     turn += 1
+                    player2_turn = False
+                    player1_turn = True
                 elif dice_value == 2:
                     six_rolled = False
-                    player2_turn = False
-                    player1_turn = True
                     if player2_started and player2_square.position <= 98:
                         player2_square = board[player2_square.position + 2]
+                        if player2_square.snake:
+                            player2_square = player2_square.snake
+                        if player2_square.ladder:
+                            player2_square = player2_square.ladder
                     turn += 1
+                    player2_turn = False
+                    player1_turn = True
                 elif dice_value == 3:
                     six_rolled = False
-                    player2_turn = False
-                    player1_turn = True
                     if player2_started and player2_square.position <= 97:
                         player2_square = board[player2_square.position + 3]
+                        if player2_square.snake:
+                            player2_square = player2_square.snake
+                        if player2_square.ladder:
+                            player2_square = player2_square.ladder
                     turn += 1
+                    player2_turn = False
+                    player1_turn = True
                 elif dice_value == 4:
                     six_rolled = False
-                    player2_turn = False
-                    player1_turn = True
                     if player2_started and player2_square.position <= 96:
                         player2_square = board[player2_square.position + 4]
+                        if player2_square.snake:
+                            player2_square = player2_square.snake
+                        if player2_square.ladder:
+                            player2_square = player2_square.ladder
                     turn += 1
-                elif dice_value == 5:
-                    six_rolled = False
                     player2_turn = False
                     player1_turn = True
+                elif dice_value == 5:
+                    six_rolled = False
                     if player2_started and player2_square.position <= 95:
                         player2_square = board[player2_square.position + 5]
+                        if player2_square.snake:
+                            player2_square = player2_square.snake
+                        if player2_square.ladder:
+                            player2_square = player2_square.ladder
                     turn += 1
+                    player2_turn = False
+                    player1_turn = True
                 elif dice_value == 6:
                     six_rolled = True
                     if player2_started and player2_square.position <= 94:
                         player2_square = board[player2_square.position + 6]
                 if player2_square == board[100]:
                     player2_won = True
-    if player1_turn:
-        screen.blit(turn_msg1, (10, 350))
-    if player2_turn:
-        screen.blit(turn_msg2, (10, 350))
+    
     if not dice_rolled or dice_value == 0:
         screen.blit(dice, (50, 150))
+        time.sleep(1)
     else:
         screen.blit(dice_list[dice_value], (75, 150))
+    
     if six_rolled:
         screen.blit(six_msg1, (10, 400))
         screen.blit(six_msg2, (10, 425))
+    
     if not player1_started:
         screen.blit(player1, (50, 500))
         dice_value = 0
     else:
-        if player1_square.snake and dice_value != 6:
-            player1_square = player1_square.snake
-        if player1_square.ladder and dice_value != 6:
-            player1_square = player1_square.ladder
         pos_msg1 = font.render("Player_1 : "+str(player1_square.position), True, (0, 0, 0))
         screen.blit(pos_msg1, (960, 200))
         screen.blit(player1, (player1_square.x, player1_square.y))
         dice_value = 0
+    
     if not player2_started:
         screen.blit(player2, (130, 500))
     else:
-        if player2_square.snake and dice_value != 6:
-            player2_square = player2_square.snake
-        if player2_square.ladder and dice_value != 6:
-            player2_square = player2_square.ladder
         pos_msg2 = font.render("Player_2 : " + str(player2_square.position), True, (0, 0, 0))
         screen.blit(pos_msg2, (960, 225))
         screen.blit(player2, (player2_square.x, player2_square.y))
         dice_value = 0
+    
+    if player1_turn:
+        screen.blit(turn_msg1, (10, 350))
+    if player2_turn:
+        screen.blit(turn_msg2, (10, 350))
+    
     if player1_won:
         screen.blit(win_msg1, (200, 300))
     if player2_won:
