@@ -31,6 +31,7 @@ six_msg1 = font.render("You rolled a 6!", True, (0, 255, 0))
 six_msg2 = font.render("Roll again!", True, (0, 255, 0))
 
 
+# Linked List -> Square class denotes Node and Board class denotes SLL
 class Square:
     def __init__(self, p=0, x_coordinate=0, y_coordinate=0):
         self.position = p
