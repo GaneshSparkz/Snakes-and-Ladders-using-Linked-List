@@ -301,7 +301,7 @@ while not done:
     
     if player1_won:
         screen.blit(win_msg1, (200, 300))
-    if player2_won:
+    elif player2_won:
         screen.blit(win_msg2, (200, 300))
     pygame.display.flip()
 
