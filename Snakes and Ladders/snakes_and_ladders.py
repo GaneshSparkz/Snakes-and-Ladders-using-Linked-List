@@ -123,7 +123,6 @@ dice_list = [0, dice1, dice2, dice3, dice4, dice5, dice6]
 # set the players
 player1 = pygame.image.load("player1.png")
 player2 = pygame.image.load("player2.png")
-clock = pygame.time.Clock()
 while not done:
     screen.blit(bg, (0, 0))
     screen.blit(board_sprite, (250, 0))
