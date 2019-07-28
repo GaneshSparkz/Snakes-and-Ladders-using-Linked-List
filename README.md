@@ -7,10 +7,13 @@ A 2D Graphical Snakes and Ladders Game using Linked List Data Structure
 
 DEVELOPMENT TOOLS
 
+
 PYTHON PROGRAMMING LANGUAGE
+
 	Python is a widely used general-purpose, high level programming language. It was initially designed by Guido van Rossum in 1991 and developed by Python Software Foundation. It was mainly developed for emphasis on code readability, and its syntax allows programmers to express concepts in fewer lines of code. Python is a programming language that lets you work quickly and integrate systems more efficiently. Python 3 is used to implement this project.
 
 PYGAME LIBRARY
+
 	The pygame is a Free and Open Source python programming language library for making multimedia applications like games built on top of the excellent SDL library. Like SDL, pygame is highly portable and runs on nearly every platform and operating system. Millions of people have downloaded pygame itself, which is a whole lot of bits flying across the internets.
 	The functions used from pygame in this project are as follows:
 •	pygame.display.set_mode()
@@ -59,6 +62,7 @@ PYGAME LIBRARY
   This will get all the messages and remove them from the queue. If a type or sequence of types is given, only those messages will be removed from the queue. If you are only taking specific events from the queue, be aware that the queue could eventually fill up with the events you are not interested.
 
 THE RANDOM LIBRARY
+
 	This module implements pseudo-random number generators for various distributions. For integers, uniform selection from a range. For sequences, uniform selection of a random element, a function to generate a random permutation of a list in-place, and a function for random sampling without replacement.
 	The function used from random library in this project is
 random.randint(a, b)
@@ -66,6 +70,7 @@ Return a random integer N such that a <= N <= b.
 dice_value = random.randint(1, 6)
 
 THE TIME LIBRARY
+
 	This module provides various time-related functions. Although this module is always available, not all functions are available on all platforms. Most of the functions defined in this module call platform C library functions with the same name. It may sometimes be helpful to consult the platform documentation, because the semantics of these functions varies among platforms.
 	The function used from time library in this project is
 time.sleep(secs)
@@ -73,5 +78,6 @@ Suspend execution of the current thread for the given number of seconds. The arg
 time.sleep(1)
 
 LINKED LIST DATA STRUCTURE
+
 	A linked list is a linear data structure where each element is a separate object. Linked list elements are not stored at contiguous location; the elements are linked using pointers. Each node of a list is made up of two items - the data and a reference to the next node. The last node has a reference to null. The entry point into a linked list is called the head of the list. It should be noted that head is not a separate node, but the reference to the first node. If the list is empty then the head is a null reference. 
 	In this project, the Node(data type for linked list) is implemented as class Square which has the attributes position(data), next(pointer), snake(pointer), ladder(pointer), x, y(coordinates for graphics) and the Linked List is implemented as class Board whose object is a linked list of 100 Square objects(Nodes).
