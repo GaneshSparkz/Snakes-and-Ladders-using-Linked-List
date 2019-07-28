@@ -18,6 +18,7 @@ The pygame is a Free and Open Source python programming language library for mak
 The functions used from pygame in this project are as follows:
 
 •pygame.display.set_mode()
+
 Initialize a window or screen for display
 set_mode(resolution=(0,0),flags=0,depth=0) -> Surface
 SCREEN_WIDTH = 1200
@@ -26,11 +27,13 @@ screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
 This function will create a display Surface. The arguments passed in are requests for a display type. The actual created display will be the best possible match supported by the system. The resolution argument is a pair of numbers representing the width and height. The flags argument is a collection of additional options. The depth argument represents the number of bits to use for colour. The Surface that gets returned can be drawn to like a regular Surface but changes will eventually be seen on the monitor.
  
 •pygame.display.flip()
+
 Update the full display Surface to the screen
 flip() -> None
 This will update the contents of the entire display. If your display mode is using the flags  pygame.HWSURFACE and pygame.DOUBLEBUF, this will wait for a vertical retrace and swap the surfaces. If you are using a different type of display mode, it will simply update the entire contents of the surface. When using a pygame.OPENGL display mode, this will perform a gl buffer swap.
 
 •pygame.display.set_caption()
+
 Set the current window caption
 set_caption(title, icontitle=None) -> None
 TITLE = "Snakes and Ladders"
@@ -38,24 +41,28 @@ pygame.display.set_caption(TITLE)
 If the display has a window title, this function will change the name on the window. Some systems support an alternate shorter title to be used for minimized displays.
 
 •pygame.Surface.blit()
+
 draw one image onto another
 blit(source, dest, area=None, special_flags = 0) -> Rect
 screen.blit(dice, (50, 150))
 Draws a source Surface onto this Surface. The draw can be positioned with the dest argument. Dest can either be pair of coordinates representing the upper left corner of the source. A Rect can also be passed as the destination and the topleft corner of the rectangle will be used as the position for the blit. The size of the destination rectangle does not effect the blit. An optional area rectangle can be passed as well. This represents a smaller portion of the source Surface to draw.
 
 •pygame.font.SysFont()
+
 create a Font object from the system fonts
 SysFont(name, size, bold=False, italic=False) -> Font
 font = pygame.font.SysFont("Maiandra GD", 24, bold=True)
 Return a new Font object that is loaded from the system fonts. The font will match the requested bold and italic flags. If a suitable system font is not found this will fall back on loading the default pygame font. The font name can be a comma separated list of font names to look for.
 
 •pygame.font.Font.render()
+
 draw text on a new Surface
 render(text, antialias, color, background=None) -> Surface
 dice_msg1 = font.render("Press 'SPACE BAR'", True, (0, 0, 255))
 This creates a new Surface with the specified text rendered on it. pygame provides no way to directly draw text on an existing Surface: instead you must use Font.render() to create an image (Surface) of the text, then blit this image onto another Surface. The text can only be a single line: newline characters are not rendered. Null characters ('x00') raise a TypeError. Both Unicode and char (byte) strings are accepted.
 
 •pygame.image.load()
+
 load new image from a file
 load(filename) -> Surface
 load(fileobj, namehint="") -> Surface
@@ -63,6 +70,7 @@ dice = pygame.image.load("dice.png")
 Load an image from a file source. You can pass either a filename or a Python file-like object. Pygame will automatically determine the image type (e.g., GIF or bitmap) and create a new Surface object from the data. In some cases it will need to know the file extension (e.g., GIF images should end in ".gif"). If you pass a raw file-like object, you may also want to pass the original filename as the namehint argument.
 
 •pygame.event.get()
+
 get events from the queue
 get() -> Eventlist
 get(type) -> Eventlist
