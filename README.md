@@ -2,6 +2,7 @@
 A 2D Graphical Snakes and Ladders Game using Linked List Data Structure
 
 Type or paste the following commands in your command line to play this game.
+
 Step 1:
 
 ```
