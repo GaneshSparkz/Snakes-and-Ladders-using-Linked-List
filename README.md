@@ -1,6 +1,39 @@
 # Snakes and Ladders using Linked List
 A 2D Graphical Snakes and Ladders Game using Linked List Data Structure
-  
+
+Type or paste the following commands in your command line to play this game.
+Step 1:
+
+```
+pip install pygame
+```
+
+Step 2:
+
+```
+git clone https://github.com/GaneshSparkz/Snakes-and-Ladders-using-Linked-List.git
+```
+
+Step 3:
+
+```
+cd Snakes-and-Ladders-using-Linked-List
+```
+
+Step 4:
+
+```
+cd "Snakes and Ladders"
+```
+
+Step 5:
+
+```
+python snakes_and_ladders.py
+```
+
+DESCRIPTION
+
   ‘Snakes and Ladders’ is a multiplayer board game which has a board with hundred squares starting from 1 to 100. A number of Snakes and Ladders are pictured on the board pointing to some specific squares. This game is played using a dice which rolls from 1 to 6. Two different coloured pawns are used to represent each player. Each player starts with a token on the starting square (usually the "1" grid square in the bottom left corner, or simply, off the board next to the "1" grid square). Players take turns rolling a single die to move their token by the number of squares indicated by the die roll. Tokens follow a fixed route marked on the game board which usually follows a track from the bottom to the top of the playing area, passing once through every square. If, on completion of a move, a player's token lands on the lower-numbered end of a "ladder", the player moves the token up to the ladder's higher-numbered square. If the player lands on the higher-numbered square of a "snake", the token must be moved down to the snake's lower-numbered square. If a player rolls a 6, the player may, after moving, immediately take another turn; otherwise play passes to the next player in turn. The player who is first to bring their token to the last square of the track is the winner.
   
   This project is implemented in such a way that each player can roll the dice which appears on the screen by pressing the Space bar during his/her turn. A player can start the game (reach the first square) only if the dice shows 1. After starting, when a player rolls the dice, his/her coin automatically move number of steps indicated by the dice and reach the destination square. 
